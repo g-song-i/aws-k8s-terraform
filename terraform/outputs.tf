@@ -38,6 +38,16 @@ output "worker_instance_ids" {
   value       = aws_instance.worker_instance.*.id
 }
 
+output "master_instance_public_ip" {
+  description = "Public IP of the Master Instance"
+  value       = aws_instance.master_instance.public_ip
+}
+
+output "worker_instance_public_ips" {
+  description = "Public IPs of the Worker Instances"
+  value       = aws_instance.worker_instance.*.public_ip
+}
+
 output "region" {
   description = "The AWS region the resources are created in"
   value       = var.region

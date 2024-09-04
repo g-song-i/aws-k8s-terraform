@@ -111,6 +111,7 @@ resource "aws_instance" "master_instance" {
   instance_type         = var.master_instance_type
   subnet_id             = aws_subnet.k8s_subnet.id
   vpc_security_group_ids = [aws_security_group.master_sg.id]
+  disable_api_termination = true
 
   tags = {
     Name = "Kubernetes Master Node"
@@ -123,6 +124,7 @@ resource "aws_instance" "worker_instance" {
   instance_type         = var.worker_instance_type
   subnet_id             = aws_subnet.k8s_subnet.id
   vpc_security_group_ids = [aws_security_group.worker_sg.id]
+  disable_api_termination = true
 
   tags = {
     Name = "Kubernetes Worker Node ${count.index + 1}"
