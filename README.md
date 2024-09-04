@@ -1,0 +1,1 @@
+Contents includes scripts needed for the installation of containerd and Kubernetes (kubeadm, kubelet, and kubectl) and terraform code to deploy AWS resources needed for Kubernetes configurations.
